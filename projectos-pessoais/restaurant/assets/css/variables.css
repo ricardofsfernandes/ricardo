@@ -1,0 +1,19 @@
+/*
+* VARIABLES
+* - Ficheiro destinado a todas as variables do projeto
+*/
+
+:root {
+    --fontfamilyheader: "Cormorant", serif;
+    --fontfamilybody1: 'Roboto', sans-serif;
+    --fontfamilybody2: "Roboto Flex", serif;
+    --color01:#ddd5c2;
+    --color02:#efe7d2;
+    --colortitle:#c2bcab;
+    --color04:#0a0b0a;
+    --color05:#906440;
+    --color06:#8c918a;
+    --color07:#000000;
+    --color08:#ffffff;
+    --colordamaria: #23030e;
+  }
