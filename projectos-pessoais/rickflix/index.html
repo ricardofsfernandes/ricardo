@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="séries, filmes, entretenimento, streaming, conteúdo">
+  <meta name="author" content="Ricardo Fernandes">
+    <title>RickFlix - Séries e Filmes Online</title>
+    <meta name="description" content="Site Videos e Séries">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!--Poppins - font-family: "Poppins", sans-serif;-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="primaryHeader">
+            <div class="columnLeft">
+                <div>
+                    <a href="index.html"><h2><span>R</span>ICK<span>F</span>LIX</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="columnRight">
+                <nav>
+                    <ul>
+                        <li>
+                            <div class="search-container">
+                                <div class="search-wrapper">
+                                    <button id="searchButton" class="search-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    </button>
+                                    <input type="search" id="searchInput" class="search-input" placeholder="Títulos, pessoas, gêneros" />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="24" 
+                            height="24" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-width="2" 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            class="lucide lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+                            <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="24" 
+                            height="24" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-width="2" 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            class="lucide lucide-circle-user-round">
+                            <path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/>
+                            </svg>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="layout">
+            <aside>
+                <nav>
+                    <div class="menu-container">
+                        <ul>
+                            <li>
+                                <a class="mainPage" href="index.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color04)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                    <span>Página Inicial</span></a>
+                            </li>
+                            <li>
+                                <a class="series" href="#">
+                                    <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_6_14)">
+                                        <path d="M2.50977 16.875H21.9043C22.7311 16.875 23.3561 16.6634 23.7793 16.2402C24.2025 15.8171 24.4141 15.1921 24.4141 14.3652V3.17383C24.4141 2.35352 24.2025 1.73177 23.7793 1.30859C23.3561 0.885415 22.7311 0.673828 21.9043 0.673828H2.50977C1.68294 0.673828 1.05794 0.885415 0.634766 1.30859C0.211589 1.73177 0 2.35352 0 3.17383V14.3652C0 15.1921 0.211589 15.8171 0.634766 16.2402C1.05794 16.6634 1.68294 16.875 2.50977 16.875ZM2.53906 15.3027C2.22005 15.3027 1.97917 15.223 1.81641 15.0635C1.65365 14.904 1.57227 14.6647 1.57227 14.3457V3.20312C1.57227 2.88411 1.65365 2.64486 1.81641 2.48535C1.97917 2.32584 2.22005 2.24609 2.53906 2.24609H21.875C22.2005 2.24609 22.443 2.32584 22.6025 2.48535C22.762 2.64486 22.8418 2.88411 22.8418 3.20312V14.3457C22.8418 14.6647 22.762 14.904 22.6025 15.0635C22.443 15.223 22.2005 15.3027 21.875 15.3027H2.53906ZM7.29492 20.1855H17.1191C17.334 20.1855 17.5195 20.109 17.6758 19.9561C17.8321 19.8031 17.9102 19.6159 17.9102 19.3945C17.9102 19.1797 17.8321 18.9942 17.6758 18.8379C17.5195 18.6816 17.334 18.6035 17.1191 18.6035H7.29492C7.08008 18.6035 6.89453 18.6816 6.73828 18.8379C6.58203 18.9942 6.50391 19.1797 6.50391 19.3945C6.50391 19.6159 6.58203 19.8031 6.73828 19.9561C6.89453 20.109 7.08008 20.1855 7.29492 20.1855Z" fill="var(--color04)"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_6_14">
+                                        <rect width="24.4141" height="20.1855" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                        </svg>
+                                        <span>Séries</span>
+                                    </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="path-1-inside-1_12_4" fill="white">
+                                        <path d="M26.4306 0.880646L21.5181 1.85565L24.9431 6.28065L27.4056 5.78065L26.4306 0.880646ZM17.8431 2.58065L15.3806 3.06815L18.8181 7.48065L21.2681 6.99315L17.8431 2.58065ZM11.7181 3.78065L9.25562 4.29315L12.6931 8.70564L15.1431 8.21815L11.7181 3.78065ZM5.58062 5.03065L4.35562 5.26815C4.03361 5.33164 3.72731 5.45808 3.45427 5.6402C3.18124 5.82233 2.94684 6.05656 2.76451 6.32946C2.58219 6.60236 2.45553 6.90858 2.3918 7.23053C2.32807 7.55249 2.32851 7.88386 2.39312 8.20565L2.88062 10.6556L9.00562 9.44314L5.58062 5.03065ZM25.3806 13.1556V23.1556H5.38062V13.1556H25.3806ZM27.8806 10.6556H2.88062V23.1556C2.88062 23.8187 3.14401 24.4546 3.61285 24.9234C4.08169 25.3923 4.71758 25.6556 5.38062 25.6556H25.3806C26.7681 25.6556 27.8806 24.5431 27.8806 23.1556V10.6556Z"/>
+                                        </mask>
+                                        <path d="M26.4306 0.880646L21.5181 1.85565L24.9431 6.28065L27.4056 5.78065L26.4306 0.880646ZM17.8431 2.58065L15.3806 3.06815L18.8181 7.48065L21.2681 6.99315L17.8431 2.58065ZM11.7181 3.78065L9.25562 4.29315L12.6931 8.70564L15.1431 8.21815L11.7181 3.78065ZM5.58062 5.03065L4.35562 5.26815C4.03361 5.33164 3.72731 5.45808 3.45427 5.6402C3.18124 5.82233 2.94684 6.05656 2.76451 6.32946C2.58219 6.60236 2.45553 6.90858 2.3918 7.23053C2.32807 7.55249 2.32851 7.88386 2.39312 8.20565L2.88062 10.6556L9.00562 9.44314L5.58062 5.03065ZM25.3806 13.1556V23.1556H5.38062V13.1556H25.3806ZM27.8806 10.6556H2.88062V23.1556C2.88062 23.8187 3.14401 24.4546 3.61285 24.9234C4.08169 25.3923 4.71758 25.6556 5.38062 25.6556H25.3806C26.7681 25.6556 27.8806 24.5431 27.8806 23.1556V10.6556Z" fill="var(--color04)"/>
+                                        <path d="M21.5181 1.85565L21.4208 1.36521L20.628 1.52255L21.1227 2.16169L21.5181 1.85565ZM24.9431 6.28065L24.5477 6.58669L24.738 6.8325L25.0426 6.77065L24.9431 6.28065ZM27.4056 5.78065L27.5051 6.27065L27.9932 6.17154L27.896 5.68307L27.4056 5.78065ZM15.3806 3.06815L15.2835 2.57766L14.4875 2.73526L14.9862 3.37543L15.3806 3.06815ZM18.8181 7.48065L18.4237 7.78793L18.6132 8.03122L18.9157 7.97103L18.8181 7.48065ZM21.2681 6.99315L21.3657 7.48353L22.1592 7.32565L21.6631 6.68656L21.2681 6.99315ZM11.7181 3.78065L12.1139 3.47514L11.9227 3.22736L11.6162 3.29113L11.7181 3.78065ZM9.25562 4.29315L9.15374 3.80363L8.36787 3.96719L8.86118 4.60043L9.25562 4.29315ZM12.6931 8.70564L12.2987 9.01292L12.4882 9.25622L12.7907 9.19603L12.6931 8.70564ZM15.1431 8.21815L15.2407 8.70853L16.0317 8.55113L15.5389 7.91264L15.1431 8.21815ZM5.58062 5.03065L5.97559 4.72406L5.78715 4.48129L5.48545 4.53979L5.58062 5.03065ZM4.35562 5.26815L4.26045 4.77728L4.25888 4.77759L4.35562 5.26815ZM2.39312 8.20565L2.8835 8.10807L2.88334 8.10723L2.39312 8.20565ZM2.88062 10.6556L2.39023 10.7532L2.48771 11.2431L2.97771 11.1461L2.88062 10.6556ZM9.00562 9.44314L9.10271 9.93363L9.8972 9.77635L9.40059 9.13656L9.00562 9.44314ZM25.3806 13.1556H25.8806V12.6556H25.3806V13.1556ZM25.3806 23.1556V23.6556H25.8806V23.1556H25.3806ZM5.38062 23.1556H4.88062V23.6556H5.38062V23.1556ZM5.38062 13.1556V12.6556H4.88062V13.1556H5.38062ZM27.8806 10.6556H28.3806V10.1556H27.8806V10.6556ZM2.88062 10.6556V10.1556H2.38062V10.6556H2.88062ZM2.88062 23.1556H2.38062H2.88062ZM26.3333 0.390212L21.4208 1.36521L21.6155 2.34608L26.528 1.37108L26.3333 0.390212ZM21.1227 2.16169L24.5477 6.58669L25.3385 5.9746L21.9135 1.5496L21.1227 2.16169ZM25.0426 6.77065L27.5051 6.27065L27.3061 5.29064L24.8436 5.79064L25.0426 6.77065ZM27.896 5.68307L26.921 0.783069L25.9402 0.978223L26.9152 5.87822L27.896 5.68307ZM17.746 2.09016L15.2835 2.57766L15.4777 3.55863L17.9402 3.07113L17.746 2.09016ZM14.9862 3.37543L18.4237 7.78793L19.2126 7.17337L15.7751 2.76087L14.9862 3.37543ZM18.9157 7.97103L21.3657 7.48353L21.1705 6.50276L18.7205 6.99026L18.9157 7.97103ZM21.6631 6.68656L18.2381 2.27406L17.4481 2.88723L20.8731 7.29973L21.6631 6.68656ZM11.6162 3.29113L9.15374 3.80363L9.35749 4.78266L11.82 4.27016L11.6162 3.29113ZM8.86118 4.60043L12.2987 9.01292L13.0876 8.39837L9.65005 3.98587L8.86118 4.60043ZM12.7907 9.19603L15.2407 8.70853L15.0455 7.72776L12.5955 8.21526L12.7907 9.19603ZM15.5389 7.91264L12.1139 3.47514L11.3223 4.08615L14.7473 8.52365L15.5389 7.91264ZM5.48545 4.53979L4.26045 4.77729L4.45078 5.75901L5.67578 5.52151L5.48545 4.53979ZM4.25888 4.77759C3.87232 4.85382 3.5046 5.00561 3.17682 5.22425L3.73173 6.05616C3.95002 5.91055 4.19491 5.80946 4.45235 5.7587L4.25888 4.77759ZM3.17682 5.22425C2.84904 5.44289 2.56764 5.72408 2.34876 6.0517L3.18027 6.60722C3.32603 6.38903 3.51344 6.20177 3.73173 6.05616L3.17682 5.22425ZM2.34876 6.0517C2.12988 6.37932 1.97783 6.74693 1.90132 7.13344L2.88228 7.32762C2.93323 7.07022 3.0345 6.82541 3.18027 6.60722L2.34876 6.0517ZM1.90132 7.13344C1.82481 7.51995 1.82534 7.91776 1.9029 8.30406L2.88334 8.10723C2.83169 7.84996 2.83133 7.58503 2.88228 7.32762L1.90132 7.13344ZM1.90273 8.30322L2.39023 10.7532L3.371 10.5581L2.8835 8.10807L1.90273 8.30322ZM2.97771 11.1461L9.10271 9.93363L8.90852 8.95266L2.78352 10.1652L2.97771 11.1461ZM9.40059 9.13656L5.97559 4.72406L5.18564 5.33723L8.61064 9.74973L9.40059 9.13656ZM24.8806 13.1556V23.1556H25.8806V13.1556H24.8806ZM25.3806 22.6556H5.38062V23.6556H25.3806V22.6556ZM5.88062 23.1556V13.1556H4.88062V23.1556H5.88062ZM5.38062 13.6556H25.3806V12.6556H5.38062V13.6556ZM27.8806 10.1556H2.88062V11.1556H27.8806V10.1556ZM2.38062 10.6556V23.1556H3.38062V10.6556H2.38062ZM2.38062 23.1556C2.38062 23.9513 2.69669 24.7144 3.2593 25.277L3.9664 24.5699C3.59133 24.1948 3.38062 23.6861 3.38062 23.1556H2.38062ZM3.2593 25.277C3.82191 25.8396 4.58497 26.1556 5.38062 26.1556V25.1556C4.85018 25.1556 4.34148 24.9449 3.9664 24.5699L3.2593 25.277ZM5.38062 26.1556H25.3806V25.1556H5.38062V26.1556ZM25.3806 26.1556C27.0443 26.1556 28.3806 24.8193 28.3806 23.1556H27.3806C27.3806 24.267 26.492 25.1556 25.3806 25.1556V26.1556ZM28.3806 23.1556V10.6556H27.3806V23.1556H28.3806Z" fill="#141414" mask="url(#path-1-inside-1_12_4)"/>
+                                        </svg>
+                                        <span>Filmes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.7742 1.70313V9.20313C26.7742 9.38961 26.7001 9.56845 26.5682 9.70031C26.4364 9.83217 26.2575 9.90625 26.0711 9.90625C25.8846 9.90625 25.7057 9.83217 25.5739 9.70031C25.442 9.56845 25.3679 9.38961 25.3679 9.20313V3.40234L15.3132 13.4453C15.2498 13.512 15.1734 13.565 15.0888 13.6013C15.0042 13.6376 14.9131 13.6563 14.8211 13.6563C14.729 13.6563 14.6379 13.6376 14.5533 13.6013C14.4687 13.565 14.3924 13.512 14.3289 13.4453L10.1336 9.26172L2.18825 17.1953C2.12361 17.2599 2.04688 17.3112 1.96243 17.3462C1.87798 17.3812 1.78747 17.3992 1.69606 17.3992C1.60465 17.3992 1.51414 17.3812 1.42969 17.3462C1.34524 17.3112 1.26851 17.2599 1.20387 17.1953C1.13924 17.1307 1.08796 17.0539 1.05298 16.9695C1.018 16.885 1 16.7945 1 16.7031C1 16.6117 1.018 16.5212 1.05298 16.4368C1.08796 16.3523 1.13924 16.2756 1.20387 16.2109L9.64137 7.77344C9.70485 7.70678 9.78121 7.65372 9.86582 7.61746C9.95042 7.5812 10.0415 7.5625 10.1336 7.5625C10.2256 7.5625 10.3167 7.5812 10.4013 7.61746C10.4859 7.65372 10.5623 7.70678 10.6257 7.77344L14.8211 11.957L24.3718 2.40625H18.5711C18.3846 2.40625 18.2057 2.33217 18.0739 2.20031C17.942 2.06845 17.8679 1.88961 17.8679 1.70313C17.8679 1.51664 17.942 1.3378 18.0739 1.20594C18.2057 1.07408 18.3846 1 18.5711 1H26.0711C26.2575 1 26.4364 1.07408 26.5682 1.20594C26.7001 1.3378 26.7742 1.51664 26.7742 1.70313Z" fill="white" stroke="var(--color04)"/>
+                                        </svg>
+                                    <span>Novidades mais vistas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color04)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                                    <span>A minha lista</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <main>
+                <div class="mainContent">
+                    <section>
+                        <h2>Os mais vistos</h2>
+
+                        <div class="carousel-container">
+                        <a class="prev" onclick="scrollCarousel(-1)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg></a>
+                        
+                        <div class="carousel">
+                            <div class="carousel-item">
+                                <img src="assets/images/aladdin.jpeg" alt="capa filme aladin">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/badboys.webp" alt="capa filme badboys">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/beekeeper.jpg" alt="capa filme beekeeper">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/deadpool.jpg" alt="capa filme deadpool">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/velocidadefuriosa10.jpg" alt="capa filme velocidade furiosa 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/oinfiltrado.jpg" alt="capa filme o infiltrado">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/007.jpg" alt="capa filme 007">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/harrypotter.jpg" alt="capa filme harry potter">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/piratasdascaraibas.jpg" alt="capa filme piratas do caribe">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/avatar.png" alt="capa filme avatar">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/aladdin.jpeg" alt="capa filme aladin">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/badboys.webp" alt="capa filme badboys">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/beekeeper.jpg" alt="capa filme beekeeper">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/deadpool.jpg" alt="capa filme deadpool">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/velocidadefuriosa10.jpg" alt="capa filme velocidade furiosa 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/oinfiltrado.jpg" alt="capa filme o infiltrado">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/007.jpg" alt="capa filme 007">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/harrypotter.jpg" alt="capa filme harry potter">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/piratasdascaraibas.jpg" alt="capa filme piratas do caribe">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/avatar.png" alt="capa filme avatar">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/aladdin.jpeg" alt="capa filme aladin">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/badboys.webp" alt="capa filme badboys">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/beekeeper.jpg" alt="capa filme beekeeper">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/deadpool.jpg" alt="capa filme deadpool">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/velocidadefuriosa10.jpg" alt="capa filme velocidade furiosa 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/oinfiltrado.jpg" alt="capa filme o infiltrado">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/007.jpg" alt="capa filme 007">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/harrypotter.jpg" alt="capa filme harry potter">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/piratasdascaraibas.jpg" alt="capa filme piratas do caribe">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/avatar.png" alt="capa filme avatar">
+                            </div>
+                        </div>
+                        
+                        <a class="next" onclick="scrollCarousel(1)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg></a>
+                        </div>
+                    </section>
+                    
+                    <section class="more-visible">
+                        <!-- Título da seção -->
+                        <h2>Achamos que vai adorar estes títulos</h2>
+                  
+                        <!-- Cards de filmes -->
+                        <div class="cards-container">
+                          <div class="card-more-visible">
+                            <img src="assets/images/aladdin.jpeg" alt="capa filme aladin">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/badboys.webp" alt="capa filme badboys">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/beekeeper.jpg" alt="capa filme beekeeper">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/deadpool.jpg" alt="capa filme deadpool">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/velocidadefuriosa10.jpg" alt="capa filme velocidade furiosa 10">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/oinfiltrado.jpg" alt="capa filme o infiltrado">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/007.jpg" alt="capa filme 007">
+                          </div>
+                          <div class="card-more-visible">
+                            <img src="assets/images/harrypotter.jpg" alt="capa filme harry potter">
+                          </div>
+                        </div>
+                        </section>
+                        <section class="top-series">
+                            <div>
+                                <h2>As suas séries</h2>
+                            </div>
+                            <div class="card-group">
+                                <div class="card">
+                                    <img src="assets/images/yellowstone.jpg" alt="capa serie yellowstone">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>Yellowstone</h3>
+                                        <p>16+ · 6 Temporadas · HD</p>
+                                        <p>Crime · Suspense · Ação</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/images/formula1.jpg" alt="capa serie formula 1">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>Fórmula 1</h3>
+                                        <p>A EMOÇÃO DE UM GRANDE PRÉMIO</p>
+                                        <p>10+ · 6 Temporadas · HD</p>
+                                        <p>Britânicos · Séries documentais · Ação · Desporto</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                               
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/images/vikings.jpg" alt="capa serie vikings">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>Vikings</h3>
+                                        <p>16+ · 6 Temporadas · HD</p>
+                                        <p>Séries politicas · Suspense · Drama · Violência</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/images/got.png" alt="capa serie got">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>Game of Thrones</h3>
+                                        <p>16+ · 8 Temporadas · HD</p>
+                                        <p>Drama · Suspense · Ação</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/images/reacher.jpg" alt="capa serie reacher">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>Reacher</h3>
+                                        <p>10+ · 3 Temporadas · HD</p>
+                                        <p>Acção · Suspense · Drama</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                               
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/images/swat.jpg" alt="capa serie swat">
+                                    <div class="layer"></div>
+                                    <div class="info">
+                                        <h3>S.W.A.T.</h3>
+                                        <p>16+ · 6 Temporadas · HD</p>
+                                        <p>Suspense · Drama · Aventura · Ação</p>
+                                        <div class="buttons">
+                                            <button><span>Explore</span></button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                            </button>
+                                            <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                            </button>
+                                        </div>                                
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+            </main>
+        </div>
+    </div>
+<script src="assets/js/script.js"></script>   
+</body>
+</html>

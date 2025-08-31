@@ -1,0 +1,531 @@
+@import url("variables.css");
+
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --background-gradient: linear-gradient(to bottom, rgba(6, 6, 6, 1) 19%, rgba(20, 20, 20, 1) 99%);
+  --color-white: #ffffff;
+  --max-width: 1280px;
+  --gap: 15px;
+}
+
+  html, body {
+    height: 100%;
+  }
+
+html {
+  font-size: 62.5%;
+  font-family: var(--primary-font);
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--color01);
+  background-size: 100% 200%; /* Ajusta o tamanho do gradiente */
+  padding: 0;
+  margin: 0;
+  color: var(--color-white);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .primaryHeader {
+    flex-direction: column;
+  }
+  
+  .primaryHeader .columnLeft,
+  .primaryHeader .columnRight {
+    width: 100%;
+    justify-content: center;
+  }
+
+  aside,
+  main {
+    width: 100%;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .card-group {
+    flex-direction: column;
+    gap: var(--gap);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 55%;
+  }
+
+  .card-group {
+    gap: 10px;
+  }
+}
+
+.primaryHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  height: 70px;
+  transition: background-color .4s;
+}
+
+.primaryHeader .columnLeft{
+  width: 20%;
+  display: flex; /* para o logo se ter alinhado com o botao do modo light/dark */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.primaryHeader .columnRight{
+  width: 80%;
+}
+
+.primaryHeader .columnLeft a{
+  list-style: none;
+  text-decoration: none;
+}
+
+.primaryHeader .columnLeft h2{
+  color: #E50914;
+  font-size: 5rem;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.primaryHeader .columnLeft h2 span {
+  color: white;
+  
+}
+
+.primaryHeader .columnRight nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin-right: 15px;
+}
+
+
+/* LUPA DE PESQUISA DO HEADER*/
+
+
+/* Contêiner da barra de busca */
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botão da lupa */
+.search-icon {
+  position: absolute;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 2; /* Coloca a lupa acima do input */
+}
+
+/* Campo de busca (oculto inicialmente) */
+.search-input {
+  width: 0;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  padding: 0 10px 0 40px; /* Espaço à esquerda para a lupa */
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s ease; /* Animação suave */
+  box-sizing: border-box;
+}
+
+/* Placeholder */
+.search-input::placeholder {
+  color: gray;
+}
+
+/* Quando a busca está ativa */
+.search-input.show {
+  width: 300px;
+  opacity: 1;
+}
+
+/*FIM LUPA DE PESQUISA DO HEADER*/
+
+#layout {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+aside{
+  width: 20%;
+  height: 100vh;
+}
+
+main{
+  width: 80%;
+  padding: 20px;
+  height: 100vh;
+}
+
+aside ul {
+  list-style: none;
+  padding: 10px;
+  margin-left: 0px;
+}
+
+aside ul li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  color: var(--color04);
+  font-size: 1.6rem;
+}
+
+aside ul li a:hover {
+  font-weight: bold;
+}
+
+/*SECÇÂO DO MAIN COMEÇA AQUI*/
+
+/* Estilo do título */
+main h2 {
+  font-family: var(--primary-font);
+  font-size: 1,6rem;
+  text-align: left; /* Alinha o título à esquerda */
+  margin-bottom: 5px; /* Espaçamento inferior */
+  color: var(--color04);
+  
+}
+
+/*SECÇAO DO CARROSEL*/
+
+/* Container do carrossel */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ajuste conforme necessário */
+  margin: auto;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Conteúdo do carrossel */
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 150px;
+    height: 200px;
+  }
+}
+
+.carousel {
+  display: flex;
+  gap: 20px; /* Espaço entre os itens */
+  scroll-behavior: smooth; /* Suavidade na rolagem */
+  -webkit-overflow-scrolling: touch; /* Melhor para dispositivos móveis */
+  overflow: hidden;
+  scroll-snap-type: x mandatory; /* Garante que a rolagem se encaixe automaticamente em cada item */
+}
+
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Esconde a barra de rolagem */
+}
+
+/* Itens do carrossel */
+.carousel-item {
+  min-width: 200px; /* Largura mínima de cada item */
+  height: 300px; /* Altura dos itens */
+  background-color: gray;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  overflow: visible;
+  position: relative;
+  scroll-snap-align: start; /* Garante que a rolagem se encaixe no início de cada item */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou 'contain' dependendo do comportamento desejado */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+main .mainContent .carousel-item img:hover {
+  transform: scale(1.1);
+  z-index: 10; /* Traz a imagem ampliada para frente */
+  cursor: pointer;
+  position: absolute; /* Permite sair do fluxo normal do layout */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .mainContent .carousel-item img:hover {
+    transform: none; /* Remove o efeito */
+  }
+}
+
+/*FIM SECÇÂO DO CARROSEL*/
+
+/*SECÇÂO DO MAIN CONTENT PAI DAS SECTIONS*/
+
+/* Estilo principal */
+main .mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* Ajuste da seção .more-visible */
+main .mainContent .more-visible {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
+/* Contêiner para os cards de filmes */
+main .mainContent .cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 20px;
+  justify-content: center; /* Centraliza os itens na linha */
+}
+
+/* Estilo dos cards de filmes */
+main .mainContent .card-more-visible {
+  width: calc((100% - 80px) / 4); /* Cada card ocupa uma fração do espaço disponível */
+  max-width: 300px; /* Tamanho máximo dos cards */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Imagens dentro dos cards */
+main .mainContent .card-more-visible img {
+  width: 100%;
+  aspect-ratio: 11/16; /* Proporção da imagem */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Efeito de hover nas imagens */
+main .mainContent .more-visible img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  main .mainContent .card-more-visible {
+    width: calc((100% - 40px) / 2); /* Em telas menores, 2 colunas */
+  }
+}
+
+@media (max-width: 480px) {
+  main .mainContent .card-more-visible {
+    width: 100%; /* Cada card ocupa 100% da largura em telas muito pequenas */
+  }
+}
+
+/*
+SECÇÂO DE SERIES com CARDS
+*/
+
+main .mainContent .card-group{
+  margin: 20px 0;
+}
+
+.card-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  flex: 1 1 calc(33.33% - 20px); /*para que as cartas se adaptem ao tamanho do container.*/
+  max-width: 300px; /* Limita a largura máxima */
+  aspect-ratio: 16/9; /* Proporção da imagem */
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  flex-direction: column;
+  display: flex;
+  will-change: transform; /* Otimização */
+}
+
+
+.card img{
+  width: 100%; /* Ajusta conforme o tamanho do card */
+  /*height: 225px; /* Ajusta conforme necessário */
+  aspect-ratio: 16/9; /* Proporção da imagem */
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+  pointer-events: none; /* Evita que a imagem seja clicada */
+}
+
+.card .layer{
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0,0,0,0));
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card .info{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%); /* Ajusta o deslocamento horizontal */
+  background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 2; /* Garante que o texto fique acima da imagem */
+}
+
+.info p {
+  font-size: 8px;
+  margin:5px;
+}
+
+.info h3 {
+  font-size: 12px;
+}
+
+.card:hover,
+.card:hover img,
+.card:hover .layer{
+  transform: scale(1.05); /* Reduzimos o efeito de zoom para mais sutileza */
+}
+
+
+.card:hover > .info{
+  opacity: 1;
+  transform: translateY(0); /* Garante que o texto surja de forma fluida */
+}
+
+/* BOTOES DENTRO DO CARD*/
+
+
+.card .info .buttons {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  gap: 10px; /* Espaçamento uniforme entre os botões */
+  flex-wrap: wrap; /* Permite quebra de linha para telas menores */
+  margin-top: 10px;
+}
+
+.card .info .buttons span{
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  padding: 3px; /*5*/
+  border-radius: 10px; /* Botões arredondados */
+  font-weight: bold;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.card .info .buttons button {
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  padding: 0px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card .info .buttons svg{
+  margin-right: 5px;
+  stroke: white;
+}
+
+.card .info .buttons span:hover, 
+  .card .info .buttons button:hover {
+    background-color: transparent;
+    color: white;
+    transform: scale(1.1); /* Animação de aumento */
+  }
