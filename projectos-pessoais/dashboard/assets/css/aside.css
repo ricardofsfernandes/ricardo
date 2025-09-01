@@ -1,0 +1,93 @@
+#mySidenav {
+    position: absolute;
+    width: 30px; /* Largura inicial da sidebar */
+    height: 100%; /* Ocupa toda a altura da tela */
+    top: 0;
+    left: 0;
+    transition: 0.3s; /* Transição suave */
+}
+
+#mySidenav .menu-item {
+  display: flex; /* Usamos flexbox para alinhar o ícone e o texto */
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+  position: absolute;
+  left: 0; /* Começa na borda esquerda */
+  padding: 5px 10px;
+  width: 20px; /* Largura total */
+  text-decoration: none; /* Remove o sublinhado */
+  font-size: 1.4rem;
+  color: #87888C;
+  border-radius: 0 5px 5px 0; /* Cantos arredondados */
+  transition: 0.3s; /* Transição para os links */
+}
+
+#mySidenav .menu-item svg {
+  width: 20px; /* Tamanho do ícone */
+  height: 20px;
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+#mySidenav .menu-item .link-text {
+  display: none; /* Inicialmente, o texto está oculto */
+}
+
+/* Quando o mouse passa sobre o link, expande a sidebar e mostra o texto */
+#mySidenav .menu-item:hover .link-text {
+  display: inline-block;
+  margin-left: 5px; /* Espaço entre o ícone e o texto */
+}
+
+#mySidenav .menu-item:hover {
+  width: 130px; /* Expande a sidebar ao passar o mouse */
+  left: 0; /* Faz a transição para a posição final */
+  background-color: var(--colorhover);
+  color: var(--colorbackground);
+}
+
+/* Estilos para os links individuais */
+.house {
+  top: 15px;
+  background-color: #171821; /* Cor de fundo verde */
+}
+
+.user {
+  top: 55px; /* Defina uma distância para o próximo link */
+  background-color: #171821; /* Cor de fundo azul */
+}
+
+.statistic {
+    top: 95px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+.shopcart{
+    top: 135px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+
+.sales{
+    top: 175px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+.messsage{
+    top: 215px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+.settings{
+    top: 255px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+.favorite{
+    top: 295px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+
+.history{
+    top: 335px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+
+.signout{
+    top: 375px; /* Defina uma distância para o próximo link */
+    background-color: #171821; /* Cor de fundo azul */
+}
+
