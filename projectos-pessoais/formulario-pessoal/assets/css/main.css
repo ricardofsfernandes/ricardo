@@ -1,9 +1,73 @@
     /* Usando normalized */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     
+    /*CORES USADAS*/
+    #521908
+    #823919
+    #CA7B42
+    #FFDBAF
+    #F7EBD3
+
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0; padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #F7EBD3;
+        margin: 0; 
+        padding: 0;
+        color: #521908;
+    }
+
+    form {
+        background-color: #F7EBD3; /* fundo do formulário */
+    }
+
+    input, select, textarea {
+        background-color: #FFDBAF; /* campos de input */
+        color: #521908; /* texto dentro do input */
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #823919; /* placeholder */
+    }
+
+    button {
+        background-color: #CA7B42; /* botão principal */
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #823919; /* hover */
+    }
+     /*CORES - FIM*/
+    
+    .container {
+        background-color: #fef9f9;
+        max-width: 900px; 
+        margin: 20px auto; 
+        padding: 20px; 
+        border-radius: 5px; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    section {
+        margin: 20px auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
     }
 
     
