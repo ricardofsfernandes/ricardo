@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Familiar</title>
+    <link rel="stylesheet" href="/projectos-pessoais/rickshop/assets/css/mainshop.css">
+    <link rel="stylesheet" href="/projectos-pessoais/rickshop/assets/css/normalize.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"/>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Formulário Familiar</h1>
+        </header>
+        
+        <main>
+            <form action="/submeter" method="post">
+
+                <section class="form-pessoal">
+                    <h2>Identificação Pessoal</h2>
+                        <!-- Campo Nome Completo -->
+                        <label for="nome-completo">Nome Completo</label>
+                        <input type="text" id="nome-completo" placeholder="Nome Completo" required>
+                        <!-- Campo Data de Nascimento -->
+                        <label for="data-nascimento">Data de Nascimento</label>
+                        <input type="date" id="data-nascimento" required>
+                        <!-- Campo Idade -->
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" min="18" max="120" required>
+                        <!-- Campo Gênero -->
+                        <label for="sexo">Gênero:</label>
+                            <select id="sexo" name="sexo">
+                                <option value="">Selecione</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        <!-- Campo País -->
+                        <label for="pais">País:</label>
+                            <select id="pais" name="pais">
+                        <option value="">Selecione</option>
+                        </select>
+                        <!-- Campo Distrito e Concelho -->
+                        <label for="distrito">Distrito/Estado:</label>
+                            <select id="distrito" disabled>
+                                <option value="distrito">Selecione</option>
+                            </select>
+                        <!-- Campo Concelho -->
+                        <label for="concelho">Concelho/Cidade:</label>
+                            <select id="concelho" disabled>
+                                <option value="">Selecione</option>
+                            </select>
+                        <!-- Campo Estado Civil -->
+                        <label for="estado civil">Estado Civil:</label>
+                            <select id="marital status" name="marital status">
+                                <option value="">Selecione</option>
+                                <option value="Solteiro">Solteiro</option>
+                                <option value="Casado">Casado</option>
+                                <option value="Divorciado">Divorciado</option>
+                            </select>
+                </section>
+
+                <section class="form-docs">
+                    <h2>Documentos</h2>
+                        <!-- Campo Tipo de Documento -->
+                        <label for="tipo-documento">Tipo de Documento:</label>
+                            <select id="tipo-documento" name="tipo-documento">
+                                <option value="">Selecione</option>
+                                <option value="BI">Bilhete de Identidade</option>
+                                <option value="Passaporte">Passaporte</option>
+                                <option value="Carta de Condução">Carta de Condução</option>
+                            </select>
+                        <!-- Campo Número do Documento -->
+                        <label for="numero-documento">Número do Documento:</label>
+                        <input type="text" id="numero-documento" placeholder="Número do Documento" required>
+                        <!-- Campo Data de Emissão -->
+                        <label for="data-emissao">Data de Emissão:</label>
+                        <input type="date" id="data-emissao" required>
+                        <!-- Campo Data de Validade -->
+                        <label for="data-validade">Data de Validade:</label>
+                        <input type="date" id="data-validade" required>
+                        <!-- Contribuinte -->
+                        <label for="contribuinte">Nº Contribuinte:</label>
+                        <input type="text">
+                        <!-- Segurança Social -->
+                        <label for="seguranca-social">Nº Segurança Social:</label>
+                        <input type="text" placeholder="Nº Segurança Social"> 
+                        <!-- Utente de Saúde -->
+                        <label for="numero-utente">Nº de utente de saúde (SNS):</label>
+                        <input type="text" placeholder="Nº de utente de saúde (SNS)"> 
+                </section>        
+                
+                <section class="carta-conducao">
+                    <h2>Carta de Condução e Categorias</h2>
+                    <h3>Carta de Condução</h3>
+                    <!-- Número da Carta -->
+                        <label for="numero-carta">Número da Carta:</label>
+                        <input type="text" id="numero-carta" placeholder="Insira o número">
+                        <!-- Data de Emissão -->
+                        <label for="data-emissao-carta">Data de Emissão:</label>
+                        <input type="text" id="data-emissao-carta">
+                        <!-- Data de Validade -->
+                        <label for="data-validade-carta">Data de Validade:</label>
+                        <input type="text" id="data-validade-carta">
+                        <!-- Lista de Categorias -->
+                    <ul class="categorias">
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="AM">
+                                AM (Ciclomotores até 50cc)
+                            </label>
+                        <input type="date" class="emissao" placeholder="Data de Emissão" disabled>
+                        <input type="date" class="validade" placeholder="Data de Validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="A1">
+                                A1 (Motociclos até 125cc ou 11kw)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="A2">
+                                A2 (Motociclos até 35kw)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="A">
+                                A (Motociclos)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="B1">
+                                B1 (Quadriciclos)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="B">
+                                B (Ligeiros)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+                        
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="C1">
+                                C1 (Automóveis Pesados de Mercadorias cujo peso bruto não exceda 7500kg)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="C">
+                                C (Automóveis Pesados de Mercadorias)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="D1">
+                                D1 (Automóveis Pesados de Passageiros com lotação até 17 lugares)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="D">
+                                D (Automóveis Pesados de Passageiros)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="BE">
+                                BE (Conjunto de Veículos Compostos por um Automóvel Ligeiro e Reboque com peso bruto até 3500kg)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="C1E">
+                                C1E (Conjunto de Veículos Acoplados da Categoria C1 e Reboque ou Semirreboque)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="CE">
+                                CE (Conjunto de Veículos Acoplados da Categoria C e Reboque ou Semirreboque)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="D1E">
+                                D1E (Conjunto de Veículos Acoplados da Categoria D1 e Reboque ou Semirreboque)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input type="checkbox" class="categoria-check" data-cat="DE">
+                                DE (Conjunto de Veículos Acoplados da Categoria D e Reboque ou Semirreboque)
+                            </label>
+                            <input type="date" class="emissao" disabled>
+                            <input type="date" class="validade" disabled>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="form-contact">
+                    <h2>Contactos</h2>
+                        <!-- N° Telemóvel -->
+                        <label for="telefone">Telefone:</label>
+                        <input id="telefone" type="tel" required />
+                        <!-- Email -->
+                        <label for="email">Email:</label>
+                        <input id="email" type="email" required />
+                </section>
+                <section class="form-address">
+                    <h2>Morada</h2>
+                        <!-- Endereço -->
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" placeholder="Endereço" required>
+                        <!-- Código Postal -->
+                        <label for="codigo-postal">Código Postal:</label>
+                        <input type="text" id="codigo-postal" placeholder="Código Postal" required>
+                        <!-- Localidade -->
+                        <label for="localidade">Localidade:</label>
+                        <input type="text" id="localidade" placeholder="Localidade" required>
+                </section>
+                <section class="form-health">
+                    <h2>Saúde</h2>
+                        <!-- Tipo de Sangue -->
+                        <label for="tipo-sangue">Tipo de Sangue:</label>
+                        <input type="text" id="tipo-sangue" placeholder="Tipo de Sangue" required>
+                        <!-- Alergias -->
+                        <label for="alergias">Alergias:</label>
+                        <input type="text" id="alergias" placeholder="Alergias" required>
+                </section>
+                <section class="form-living">
+                    <h2>Situação Profissional / Escolar</h2>
+                        <!-- Profissão ou estudo - Se selecionar Trabalhador, activa input type text local-trabalho e input profissao. 
+                         Se selecionar Estudante, activa input local-estudo e input nivel-escolaridade.
+                         Se selecionar Estudante/Trabalhador, activa todos os inputs como input type text local-trabalho e input profissao e input local-estudo e input nivel-escolaridade . --> 
+
+                        <label for="profissao-estudo">Profissão ou Estudo:</label>
+                        <select id="profissao-estudo" name="profissao-estudo">
+                            <option value="">Selecione</option>
+                            <option value="Estudante">Estudante</option>
+                            <option value="Trabalhador">Trabalhador</option>
+                            <option value="Estudante/Trabalhador">Estudante/Trabalhador</option>
+                        </select>
+
+                        <!-- Local de Trabalho -->
+                        <label for="local-trabalho">Entidade Empregadora:</label>
+                        <input type="text" id="local-trabalho" placeholder="Empresa" disabled>
+                        <!-- Profissão -->
+                        <label for="profissao">Profissão:</label>
+                        <input type="text" id="profissao" placeholder="Profissão" disabled>
+                        
+                        
+                        <!-- Local de Estudo -->
+                        <label for="local-estudo">Escola/Faculdade:</label>
+                        <input type="text" id="local-estudo" placeholder="Escola/Faculdade" disabled>
+                        <!-- Nível de Escolaridade -->
+                        <label for="nivel-escolaridade">Nível de Escolaridade:</label>
+                        <input type="text" id="nivel-escolaridade" placeholder="Nível de Escolaridade" disabled>
+                </section>
+                <section class="form-extras">
+                    <h2>Extras</h2>
+                        <!-- Hobbies - caixa de texto -->
+                        <label for="hobbies">Breve descrição da Pessoa:</label>
+                        <textarea id="hobbies" placeholder="" style="overflow: hidden; resize: none; width: 100%; height: 100px;" maxlength="500"></textarea>
+                        <small id="contador">0 / 500</small>
+
+                        <!-- Idiomas Falados - fazer aqui um --selecionar--  -->
+                        
+                </section>
+        
+        
+                <!-- Botão de Enviar -->
+                <button type="submit">Submeter Formulário</button>
+            </form>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>  
+</body>
+</html>
