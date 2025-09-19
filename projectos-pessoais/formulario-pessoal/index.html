@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Familiar</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="/projectos-pessoais/rickshop/assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css"/>
 
@@ -308,12 +308,23 @@
                         <label for="hobbies">Breve descrição da Pessoa:</label>
                         <textarea id="hobbies" placeholder="" style="overflow: hidden; resize: none; width: 100%; height: 100px;" maxlength="500"></textarea>
                         <small id="contador">0 / 500</small>
-
-                        <!-- Idiomas Falados - fazer aqui um --selecionar--  -->
-                        
                 </section>
-        
-        
+                
+                <section class="form-languages">
+                    <h2>Idiomas</h2>
+                    <!-- Língua materna -->
+                    <div class="idioma-container">
+                        <label for="materna">Língua materna:</label><br>
+                        <select id="materna">
+                        <option value="">Selecionar</option>
+                        </select>
+                    </div>
+                    <!-- Aqui vão ser adicionados os idiomas -->
+                    <div id="idiomas-extra"></div>
+                    <!-- Botão ADD sempre no fim -->
+                    <button type="button" id="btnAdd">+ Adicionar idioma</button>
+                </section>
+
                 <!-- Botão de Enviar -->
                 <button type="submit">Submeter Formulário</button>
             </form>
@@ -321,7 +332,7 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js" defer defer></script>
     <script src="assets/js/main.js" defer></script>  
 </body>
 </html>

@@ -274,3 +274,73 @@ document.addEventListener("DOMContentLoaded", function () {
     contador.textContent = `${usado} / ${limite}`;
   });
 });
+
+// FORM-LANGUAGES
+
+// Array de idiomas
+    const idiomas = [
+      "Alemão", "Árabe", "Bengali", "Catalão", "Chinês (Mandarim)", "Chinês (Cantonês)",
+      "Coreano", "Dinamarquês", "Espanhol", "Francês", "Grego", "Hebraico",
+      "Hindi", "Holandês", "Húngaro", "Inglês", "Italiano", "Japonês",
+      "Norueguês", "Polaco", "Português", "Russo", "Sueco", "Turco",
+      "Ucraniano", "Urdu", "Vietnamita"
+    ];
+
+    // Preencher o select da língua materna
+    const selectMaterna = document.getElementById("materna");
+    idiomas.forEach(idioma => {
+      const opt = document.createElement("option");
+      opt.value = idioma;
+      opt.textContent = idioma;
+      selectMaterna.appendChild(opt);
+    });
+
+    const containerIdiomas = document.getElementById("idiomas-extra");
+    const btnAdd = document.getElementById("btnAdd");
+
+    btnAdd.addEventListener("click", () => {
+      // Criar bloco do novo idioma
+      const bloco = document.createElement("div");
+      bloco.classList.add("idioma-container");
+
+      // Select do idioma
+      const select = document.createElement("select");
+      const optDefault = document.createElement("option");
+      optDefault.value = "";
+      optDefault.textContent = "Selecionar idioma";
+      select.appendChild(optDefault);
+
+      idiomas.forEach(idioma => {
+        const opt = document.createElement("option");
+        opt.value = idioma;
+        opt.textContent = idioma;
+        select.appendChild(opt);
+      });
+
+      // Escala 1–10
+      const nivelDiv = document.createElement("div");
+      nivelDiv.classList.add("nivel");
+
+      for (let i = 1; i <= 10; i++) {
+        const span = document.createElement("span");
+        span.textContent = i;
+        span.dataset.valor = i;
+
+        span.addEventListener("click", () => {
+          nivelDiv.querySelectorAll("span").forEach(s => s.classList.remove("ativo"));
+          for (let j = 1; j <= i; j++) {
+            nivelDiv.querySelector(`span:nth-child(${j})`).classList.add("ativo");
+          }
+        });
+
+        nivelDiv.appendChild(span);
+      }
+
+      // Montar o bloco
+      bloco.appendChild(select);
+      bloco.appendChild(nivelDiv);
+
+      // Inserir o bloco antes do botão ADD
+      containerIdiomas.appendChild(bloco);
+      containerIdiomas.appendChild(btnAdd);
+    });
